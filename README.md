@@ -1,0 +1,1 @@
+# QRCodeAttendRN is react native version of the attendance management system utilizing the qr code technology.
