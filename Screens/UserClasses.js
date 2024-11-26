@@ -61,7 +61,7 @@ const UserClasses = ({ route }) => {
         <KeyboardAvoidingView
             style={{ flex: 1 }}
             behavior='height'
-            keyboardShouldPersistTaps='always' // This should handle taps outside TextInput
+            keyboardShouldPersistTaps='always' 
             keyboardVerticalOffset={-500}
         >
 

@@ -48,7 +48,7 @@ export function BottomTabProfessor({ focussedIndex }) {
     key: 'third',
     title: 'Tab 3',
     iconSource: require('../assets/3.png'),
-    navigTo: 'ProfClasses',
+    navigTo: 'ProfTodaysList',
     name: 'Classes'
   }, {
     key: 'fourth',

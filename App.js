@@ -20,6 +20,8 @@ import ProfHomePage from './Screens/ProfHomePage';
 import ProfCourses from './Screens/ProfCourses';
 import ProfClasses from './Screens/ProfClasses';
 import ProfProfile from './Screens/ProfProfile';
+import ProfAttendance from './Screens/ProfAttendance';
+import ProfTodaysList from './Screens/ProfTodaysList';
 import { UserProvider } from './src/Contexts/UserContext';
 import { StudentProvider } from './src/Contexts/StudentContext';
 import { ProfProvider } from './src/Contexts/ProfessorContext';
@@ -59,6 +61,8 @@ export default function App() {
                     <Stack.Screen name="ProfCourses" options={{ headerShown: false }} component={ProfCourses} />
                     <Stack.Screen name="ProfClasses" options={{ headerShown: false }} component={ProfClasses} />
                     <Stack.Screen name="ProfProfile" options={{ headerShown: false }} component={ProfProfile} />
+                    <Stack.Screen name="ProfAttendance" options={{ headerShown: false }} component={ProfAttendance} />
+                    <Stack.Screen name="ProfTodaysList" options={{ headerShown: false }} component={ProfTodaysList} />
                   </Stack.Navigator>
                 </NavigationContainer>
               </StudentProvider>
