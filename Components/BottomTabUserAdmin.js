@@ -31,31 +31,31 @@ const renderScene = SceneMap({
   fourth: FourthRoute
 });
 
- export function BottomTabUser({focussedIndex}) {
+ export function BottomTabUserAdmin({focussedIndex}) {
   const [index, setIndex] = React.useState(focussedIndex);
   const [routes] = React.useState([{
     key: 'first',
     title: 'Tab 1',
     iconSource: require('../assets/1.png'),
-    navigTo: 'StudentDashboard',
+    navigTo: 'AdminDashboard',
     name: 'Dashboard'
   }, {
     key: 'second',
     title: 'Tab 2',
     iconSource: require('../assets/2.png'),
-    navigTo: 'UserCourses',
+    navigTo: 'AdminCourses',
     name: 'Courses'
   }, {
     key: 'third',
     title: 'Tab 3',
-    iconSource: require('../assets/3.png'),
-    navigTo: 'UserAttendanceRecord',
-    name: 'Attendance'
+    iconSource: require('../images/prof.png'),
+    navigTo: 'AdminProfessors',
+    name: 'Professors'
   }, {
     key: 'fourth',
     title: 'Tab 4',
     iconSource: require('../assets/4.png'),
-    navigTo: 'UserProfile',
+    navigTo: 'AdminProfile',
     name: 'Profile'
   }]);
 

@@ -22,6 +22,13 @@ import ProfClasses from './Screens/ProfClasses';
 import ProfProfile from './Screens/ProfProfile';
 import ProfAttendance from './Screens/ProfAttendance';
 import ProfTodaysList from './Screens/ProfTodaysList';
+import LoginAdmin from './Screens/LoginAdmin';
+import CreateCollege from './Screens/CreateCollege';
+import AdminDashboard from './Screens/AdminDashboard';
+import AdminProfile from './Screens/AdminProfile';
+import AdminCourses from './Screens/AdminCourses';
+import AdminProfessors from './Screens/AdminProfessors';
+import AdminClasses from './Screens/AdminClasses';
 import { UserProvider } from './src/Contexts/UserContext';
 import { StudentProvider } from './src/Contexts/StudentContext';
 import { ProfProvider } from './src/Contexts/ProfessorContext';
@@ -63,6 +70,13 @@ export default function App() {
                     <Stack.Screen name="ProfProfile" options={{ headerShown: false }} component={ProfProfile} />
                     <Stack.Screen name="ProfAttendance" options={{ headerShown: false }} component={ProfAttendance} />
                     <Stack.Screen name="ProfTodaysList" options={{ headerShown: false }} component={ProfTodaysList} />
+                    <Stack.Screen name="LoginAdmin" options={{ headerShown: false }} component={LoginAdmin} />
+                    <Stack.Screen name="CreateCollege" options={{ headerShown: false }} component={CreateCollege} />
+                    <Stack.Screen name="AdminDashboard" options={{ headerShown: false }} component={AdminDashboard} />
+                    <Stack.Screen name="AdminProfile" options={{ headerShown: false }} component={AdminProfile} />
+                    <Stack.Screen name="AdminCourses" options={{ headerShown: false }} component={AdminCourses} />
+                    <Stack.Screen name="AdminProfessors" options={{ headerShown: false }} component={AdminProfessors} />
+                    <Stack.Screen name="AdminClasses" options={{ headerShown: false }} component={AdminClasses} />
                   </Stack.Navigator>
                 </NavigationContainer>
               </StudentProvider>

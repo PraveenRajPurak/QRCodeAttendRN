@@ -43,7 +43,7 @@ const SignUp = () => {
                             keyboardType='default'
                             placeholder='enter your phone no'
                             placeholderTextColor="white"
-                            style={{ color: 'white', fontSize: 18}}
+                            style={{ color: 'white', fontSize: 18 }}
                             value={ph}
                             onChangeText={(ph) => setPh(ph)}
                         />
@@ -53,7 +53,7 @@ const SignUp = () => {
                     <TouchableOpacity style={{ backgroundColor: 'orange', height: 60, width: 200, borderRadius: 40, textAlign: 'center', top: 40, left: 70, fontSize: 20, color: 'black' }}
                         onPress={handleSignUp}
                     >
-                        <Text style={{ colorolor: 'black', fontSize: 25, fontWeight: 'bold', position: 'relative', alignSelf: 'center', bottom: -12 }}> Login </Text>
+                        <Text style={{ colorolor: 'black', fontSize: 25, fontWeight: 'bold', position: 'relative', alignSelf: 'center', bottom: -12 }}> Proceed </Text>
                     </TouchableOpacity>
 
                 </View>

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import * as ImagePicker from 'expo-image-picker';
+import axios from 'axios';
 
 const UserAccountSetupPage = ({ route }) => {
 
@@ -16,15 +17,20 @@ const UserAccountSetupPage = ({ route }) => {
 
   const navigation = useNavigation();
 
-  // Set phone number from the route, using useEffect to avoid re-render issues
   useEffect(() => {
     if (route.params && route.params.ph) {
       setPh(route.params.ph);
     }
   }, [route.params]);
 
-  // Function to handle avatar picking
   const pickAvatar = async () => {
+
+    const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (status !== 'granted') {
+      Alert.alert('Permission Denied', 'Camera roll permissions are required to pick an avatar.');
+      return;
+    }
+
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
@@ -33,12 +39,14 @@ const UserAccountSetupPage = ({ route }) => {
     });
 
     if (!result.cancelled) {
-      setAvatar(result.uri);
+      console.log("Result : ", result);
+      setAvatar(result.assets[0].uri);
     }
+    
   };
 
   const handleUserAccountSetup = async () => {
-    if (!fullname || !email || !password || !dob || !role || !avatar) {
+    if (fullname === '' || email === '' || password === '' || dob === '' || role === '' || ph === '') {
       Alert.alert("All fields are required", "Please fill in all fields.");
       return;
     }
@@ -49,7 +57,22 @@ const UserAccountSetupPage = ({ route }) => {
     }
 
     console.log("User Info:", { fullname, email, password, dob, role, avatar, ph });
+
+    const response = await axios.post('https://qrcodeattendapp.onrender.com/api/v1/user/register', {
+      fullname: fullname,
+      email: email,
+      password: password,
+      dob: dob,
+      role: role,
+      avatar: avatar,
+      phoneNumber: ph
+    })
+
+    console.log("Response : ", response.data);
+
     navigation.navigate('LoginUser', { ph });
+
+
   };
 
   return (

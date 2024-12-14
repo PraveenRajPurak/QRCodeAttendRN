@@ -146,6 +146,8 @@ const LoginUser = () => {
             <Text style={{ colorolor: 'black', fontSize: 25, fontWeight: 'bold', position: 'relative', alignSelf: 'center', bottom: -12 }}> Login </Text>
           </TouchableOpacity>
 
+          <Text onPress={() => navigation.navigate('SignUp')} style ={{ color: 'white', fontSize: 20, top: 150, fontWeight: 'bold', textAlign: 'center' }}> Don't have an account? Signup </Text>
+
         </View>
 
       </ImageBackground>
